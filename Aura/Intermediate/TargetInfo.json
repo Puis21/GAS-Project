@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Aura",
+			"Path": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Aura\\GAS-Project\\Aura\\Source\\Aura.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "AuraEditor",
+			"Path": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Aura\\GAS-Project\\Aura\\Source\\AuraEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

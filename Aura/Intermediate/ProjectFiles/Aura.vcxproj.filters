@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Aura.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Aura.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\AuraEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Platforms">
+      <UniqueIdentifier>{ED49A36C-4FD5-37E5-A2AC-E11BEF4F21CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platforms\HoloLens">
+      <UniqueIdentifier>{28125F47-4973-377C-9D77-EBC3C72EC856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platforms\HoloLens\Config">
+      <UniqueIdentifier>{D3BF39CB-FA64-39E2-A327-B5021BA69773}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Platforms\HoloLens\Config\HoloLensEngine.ini">
+      <Filter>Platforms\HoloLens\Config</Filter>
+    </None>
+    <Filter Include="Source\Aura">
+      <UniqueIdentifier>{171ED4C2-8F97-3FFE-B0B6-01D55C378E24}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Aura\Aura.Build.cs">
+      <Filter>Source\Aura</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Aura\Aura.cpp">
+      <Filter>Source\Aura</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Aura\Aura.h">
+      <Filter>Source\Aura</Filter>
+    </ClInclude>
+    <Filter Include="Source\Aura\Game">
+      <UniqueIdentifier>{66B2C666-4297-395D-B5C4-5E78EA8FCB4A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Aura\Game\PlayerGameModeBase.cpp">
+      <Filter>Source\Aura\Game</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Aura\Game\PlayerGameModeBase.h">
+      <Filter>Source\Aura\Game</Filter>
+    </ClInclude>
+    <Filter Include="Source\Aura\Private">
+      <UniqueIdentifier>{614644D7-6FA7-303B-9CB5-F9579003D315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Aura\Private\Character">
+      <UniqueIdentifier>{02E07034-0FE1-3A7C-A01D-10DA4A11D5EE}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Aura\Private\Character\EnemyCharacter.cpp">
+      <Filter>Source\Aura\Private\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Aura\Private\Character\PlayerCharacter.cpp">
+      <Filter>Source\Aura\Private\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Aura\Private\Character\PlayerCharacterBase.cpp">
+      <Filter>Source\Aura\Private\Character</Filter>
+    </ClCompile>
+    <Filter Include="Source\Aura\Private\Interaction">
+      <UniqueIdentifier>{8600DADF-1C2F-3B4E-851E-5CF3B1B94879}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Aura\Private\Interaction\EnemyInterface.cpp">
+      <Filter>Source\Aura\Private\Interaction</Filter>
+    </ClCompile>
+    <Filter Include="Source\Aura\Private\Player">
+      <UniqueIdentifier>{0384C61C-70FC-34C5-AA42-3FFE81EA736E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Aura\Private\Player\PlayerCharacterController.cpp">
+      <Filter>Source\Aura\Private\Player</Filter>
+    </ClCompile>
+    <Filter Include="Source\Aura\Public">
+      <UniqueIdentifier>{812D085E-218E-32A1-B6D9-A817B3D0072A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Aura\Public\Character">
+      <UniqueIdentifier>{5BC97E21-9AE0-3A5A-B1AE-66CDA5B00EB5}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Aura\Public\Character\EnemyCharacter.h">
+      <Filter>Source\Aura\Public\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Aura\Public\Character\PlayerCharacter.h">
+      <Filter>Source\Aura\Public\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Aura\Public\Character\PlayerCharacterBase.h">
+      <Filter>Source\Aura\Public\Character</Filter>
+    </ClInclude>
+    <Filter Include="Source\Aura\Public\Interaction">
+      <UniqueIdentifier>{AC69F4E0-FE2C-3C00-9744-FF5ECD46407C}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Aura\Public\Interaction\EnemyInterface.h">
+      <Filter>Source\Aura\Public\Interaction</Filter>
+    </ClInclude>
+    <Filter Include="Source\Aura\Public\Player">
+      <UniqueIdentifier>{92C9D14F-9ACD-3BE9-BD79-820E68D968CD}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Aura\Public\Player\PlayerCharacterController.h">
+      <Filter>Source\Aura\Public\Player</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

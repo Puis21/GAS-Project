@@ -1,0 +1,6 @@
+﻿  Using bundled DotNet SDK version: 6.0.302
+  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" AuraEditor Win64 Development -Project="C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Aura.uproject" -WaitMutex -FromMsBuild
+  Log file: C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log.txt
+  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project).
+  Target is up to date
+  Total execution time: 0.60 seconds
