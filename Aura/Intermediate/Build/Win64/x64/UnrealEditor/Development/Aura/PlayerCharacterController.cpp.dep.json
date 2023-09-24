@@ -7,6 +7,9 @@
         "Includes": [
             "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\aura\\definitions.aura.h",
             "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\source\\aura\\public\\player\\playercharactercontroller.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\gameplaytags\\classes\\gameplaytagcontainer.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\core\\public\\misc\\comparisonutility.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplaytags\\uht\\gameplaytagcontainer.generated.h",
             "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\playercharactercontroller.generated.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\enhancedinputsubsystems.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\enhancedinputsubsysteminterface.h",
@@ -30,10 +33,14 @@
             "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\enhancedinputsubsystems.generated.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\enhancedinputworldprocessor.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\slate\\public\\framework\\application\\iinputprocessor.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\source\\aura\\public\\interaction\\enemyinterface.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\enemyinterface.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\source\\aura\\public\\input\\gameinputcomponent.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\enhancedinputcomponent.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\enhancedinputcomponent.generated.h",
-            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\source\\aura\\public\\interaction\\enemyinterface.h",
-            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\enemyinterface.generated.h"
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\source\\aura\\public\\input\\gameinputconfig.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\gameinputconfig.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\gameinputcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

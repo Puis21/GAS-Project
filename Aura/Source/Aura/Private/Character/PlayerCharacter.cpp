@@ -28,6 +28,7 @@ void APlayerCharacter::PossessedBy(AController* NewController)
 
 	//Init Ability Actor Info
 	InitAbilityActorInfo();
+	AddCharacterAbilities();
 }
 
 void APlayerCharacter::OnRep_PlayerState()
@@ -36,6 +37,14 @@ void APlayerCharacter::OnRep_PlayerState()
 
 	//Init Ability Actor Info
 	InitAbilityActorInfo();
+}
+
+int32 APlayerCharacter::GetPlayerLevel()
+{
+	const APlayerCharacterState* PlayerCharacterState = GetPlayerState<APlayerCharacterState>();
+	check(PlayerCharacterState);
+
+	return PlayerCharacterState->GetPlayerLevel();
 }
 
 void APlayerCharacter::InitAbilityActorInfo()
@@ -54,4 +63,7 @@ void APlayerCharacter::InitAbilityActorInfo()
 			GameHUD->InitOverlay(PlayerCharacterController, PlayerCharacterState, AbilitySystemComponent, AttributeSet);
 		}
 	}
+	
+	InitializeDefaultAttributes();
+
 }

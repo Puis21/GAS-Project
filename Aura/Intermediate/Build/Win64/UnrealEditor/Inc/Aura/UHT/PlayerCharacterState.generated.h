@@ -15,8 +15,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define AURA_PlayerCharacterState_generated_h
 
 #define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Player_PlayerCharacterState_h_19_SPARSE_DATA
-#define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Player_PlayerCharacterState_h_19_RPC_WRAPPERS
-#define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Player_PlayerCharacterState_h_19_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Player_PlayerCharacterState_h_19_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnRep_Level);
+
+
+#define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Player_PlayerCharacterState_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnRep_Level);
+
+
 #define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Player_PlayerCharacterState_h_19_ACCESSORS
 #define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Player_PlayerCharacterState_h_19_INCLASS_NO_PURE_DECLS \
 private: \
@@ -25,7 +33,13 @@ private: \
 public: \
 	DECLARE_CLASS(APlayerCharacterState, APlayerState, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Aura"), NO_API) \
 	DECLARE_SERIALIZER(APlayerCharacterState) \
-	virtual UObject* _getUObject() const override { return const_cast<APlayerCharacterState*>(this); }
+	virtual UObject* _getUObject() const override { return const_cast<APlayerCharacterState*>(this); } \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		Level=NETFIELD_REP_START, \
+		NETFIELD_REP_END=Level	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Player_PlayerCharacterState_h_19_INCLASS \
@@ -35,7 +49,13 @@ private: \
 public: \
 	DECLARE_CLASS(APlayerCharacterState, APlayerState, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Aura"), NO_API) \
 	DECLARE_SERIALIZER(APlayerCharacterState) \
-	virtual UObject* _getUObject() const override { return const_cast<APlayerCharacterState*>(this); }
+	virtual UObject* _getUObject() const override { return const_cast<APlayerCharacterState*>(this); } \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		Level=NETFIELD_REP_START, \
+		NETFIELD_REP_END=Level	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Player_PlayerCharacterState_h_19_STANDARD_CONSTRUCTORS \

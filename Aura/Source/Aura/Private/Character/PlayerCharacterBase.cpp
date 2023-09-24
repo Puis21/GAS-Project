@@ -2,6 +2,8 @@
 
 
 #include "Character/PlayerCharacterBase.h"
+#include "AbilitySystemComponent.h"
+#include "AbilitySystem/GameAbilitySystemComponent.h"
 
 // Sets default values
 APlayerCharacterBase::APlayerCharacterBase()
@@ -29,4 +31,30 @@ void APlayerCharacterBase::BeginPlay()
 
 void APlayerCharacterBase::InitAbilityActorInfo()
 {
+}
+
+void APlayerCharacterBase::ApplyEffectToSelf(TSubclassOf<UGameplayEffect> GameplayEffectClass, float Level) const
+{
+	check(IsValid(GetAbilitySystemComponent()));
+	check(DefaultSecondayAttributes);
+	FGameplayEffectContextHandle ContextHandle = GetAbilitySystemComponent()->MakeEffectContext();
+	ContextHandle.AddSourceObject(this);
+	const FGameplayEffectSpecHandle SpecHandle = GetAbilitySystemComponent()->MakeOutgoingSpec(GameplayEffectClass, Level, ContextHandle);
+	GetAbilitySystemComponent()->ApplyGameplayEffectSpecToTarget(*SpecHandle.Data.Get(), GetAbilitySystemComponent());
+}
+
+void APlayerCharacterBase::InitializeDefaultAttributes() const
+{
+	ApplyEffectToSelf(DefaultSecondayAttributes, 1.f);
+	ApplyEffectToSelf(DefaultBasicAttributes, 1.f);
+	ApplyEffectToSelf(DefaultPrimaryAttributes, 1.f);
+}
+
+void APlayerCharacterBase::AddCharacterAbilities()
+{
+	UGameAbilitySystemComponent* GameASC = CastChecked<UGameAbilitySystemComponent>(AbilitySystemComponent);
+	if (!HasAuthority()) return;
+
+	GameASC->AddCharacterAbilities(StartupAbilities);
+
 }

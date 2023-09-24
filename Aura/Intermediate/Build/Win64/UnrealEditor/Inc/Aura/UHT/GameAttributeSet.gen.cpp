@@ -165,6 +165,102 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 		}
 		return Z_Registration_Info_UScriptStruct_EffectProperties.InnerSingleton;
 	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_ManaRegeneration)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldManaRegeneration);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_ManaRegeneration(Z_Param_Out_OldManaRegeneration);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_HealthRegeneration)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldHealthRegeneration);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_HealthRegeneration(Z_Param_Out_OldHealthRegeneration);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_CriticalHitResistance)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldCriticalHitResistance);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_CriticalHitResistance(Z_Param_Out_OldCriticalHitResistance);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_CriticalHitDamage)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldCriticalHitDamage);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_CriticalHitDamage(Z_Param_Out_OldCriticalHitDamage);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_CriticalHitChance)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldCriticalHitChance);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_CriticalHitChance(Z_Param_Out_OldCriticalHitChance);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_BlockChance)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldBlockChance);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_BlockChance(Z_Param_Out_OldBlockChance);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_ArmorPenetration)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldArmorPenetration);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_ArmorPenetration(Z_Param_Out_OldArmorPenetration);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_Armor)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldArmor);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_Armor(Z_Param_Out_OldArmor);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_Vigor)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldVigor);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_Vigor(Z_Param_Out_OldVigor);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_Resilience)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldResilience);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_Resilience(Z_Param_Out_OldResilience);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_Intelligence)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldIntelligence);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_Intelligence(Z_Param_Out_OldIntelligence);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_Strength)
+	{
+		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldStrength);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_Strength(Z_Param_Out_OldStrength);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UGameAttributeSet::execOnRep_MaxMana)
 	{
 		P_GET_STRUCT_REF(FGameplayAttributeData,Z_Param_Out_OldMaxMana);
@@ -201,12 +297,264 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 	{
 		UClass* Class = UGameAttributeSet::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "OnRep_Armor", &UGameAttributeSet::execOnRep_Armor },
+			{ "OnRep_ArmorPenetration", &UGameAttributeSet::execOnRep_ArmorPenetration },
+			{ "OnRep_BlockChance", &UGameAttributeSet::execOnRep_BlockChance },
+			{ "OnRep_CriticalHitChance", &UGameAttributeSet::execOnRep_CriticalHitChance },
+			{ "OnRep_CriticalHitDamage", &UGameAttributeSet::execOnRep_CriticalHitDamage },
+			{ "OnRep_CriticalHitResistance", &UGameAttributeSet::execOnRep_CriticalHitResistance },
 			{ "OnRep_Health", &UGameAttributeSet::execOnRep_Health },
+			{ "OnRep_HealthRegeneration", &UGameAttributeSet::execOnRep_HealthRegeneration },
+			{ "OnRep_Intelligence", &UGameAttributeSet::execOnRep_Intelligence },
 			{ "OnRep_Mana", &UGameAttributeSet::execOnRep_Mana },
+			{ "OnRep_ManaRegeneration", &UGameAttributeSet::execOnRep_ManaRegeneration },
 			{ "OnRep_MaxHealth", &UGameAttributeSet::execOnRep_MaxHealth },
 			{ "OnRep_MaxMana", &UGameAttributeSet::execOnRep_MaxMana },
+			{ "OnRep_Resilience", &UGameAttributeSet::execOnRep_Resilience },
+			{ "OnRep_Strength", &UGameAttributeSet::execOnRep_Strength },
+			{ "OnRep_Vigor", &UGameAttributeSet::execOnRep_Vigor },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics
+	{
+		struct GameAttributeSet_eventOnRep_Armor_Parms
+		{
+			FGameplayAttributeData OldArmor;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldArmor_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldArmor;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::NewProp_OldArmor_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::NewProp_OldArmor = { "OldArmor", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_Armor_Parms, OldArmor), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::NewProp_OldArmor_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::NewProp_OldArmor_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::NewProp_OldArmor,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_Armor", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::GameAttributeSet_eventOnRep_Armor_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics
+	{
+		struct GameAttributeSet_eventOnRep_ArmorPenetration_Parms
+		{
+			FGameplayAttributeData OldArmorPenetration;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldArmorPenetration_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldArmorPenetration;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::NewProp_OldArmorPenetration_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::NewProp_OldArmorPenetration = { "OldArmorPenetration", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_ArmorPenetration_Parms, OldArmorPenetration), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::NewProp_OldArmorPenetration_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::NewProp_OldArmorPenetration_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::NewProp_OldArmorPenetration,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_ArmorPenetration", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::GameAttributeSet_eventOnRep_ArmorPenetration_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics
+	{
+		struct GameAttributeSet_eventOnRep_BlockChance_Parms
+		{
+			FGameplayAttributeData OldBlockChance;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldBlockChance_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldBlockChance;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::NewProp_OldBlockChance_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::NewProp_OldBlockChance = { "OldBlockChance", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_BlockChance_Parms, OldBlockChance), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::NewProp_OldBlockChance_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::NewProp_OldBlockChance_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::NewProp_OldBlockChance,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_BlockChance", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::GameAttributeSet_eventOnRep_BlockChance_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics
+	{
+		struct GameAttributeSet_eventOnRep_CriticalHitChance_Parms
+		{
+			FGameplayAttributeData OldCriticalHitChance;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldCriticalHitChance_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldCriticalHitChance;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::NewProp_OldCriticalHitChance_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::NewProp_OldCriticalHitChance = { "OldCriticalHitChance", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_CriticalHitChance_Parms, OldCriticalHitChance), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::NewProp_OldCriticalHitChance_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::NewProp_OldCriticalHitChance_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::NewProp_OldCriticalHitChance,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_CriticalHitChance", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::GameAttributeSet_eventOnRep_CriticalHitChance_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics
+	{
+		struct GameAttributeSet_eventOnRep_CriticalHitDamage_Parms
+		{
+			FGameplayAttributeData OldCriticalHitDamage;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldCriticalHitDamage_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldCriticalHitDamage;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::NewProp_OldCriticalHitDamage_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::NewProp_OldCriticalHitDamage = { "OldCriticalHitDamage", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_CriticalHitDamage_Parms, OldCriticalHitDamage), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::NewProp_OldCriticalHitDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::NewProp_OldCriticalHitDamage_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::NewProp_OldCriticalHitDamage,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_CriticalHitDamage", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::GameAttributeSet_eventOnRep_CriticalHitDamage_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics
+	{
+		struct GameAttributeSet_eventOnRep_CriticalHitResistance_Parms
+		{
+			FGameplayAttributeData OldCriticalHitResistance;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldCriticalHitResistance_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldCriticalHitResistance;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::NewProp_OldCriticalHitResistance_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::NewProp_OldCriticalHitResistance = { "OldCriticalHitResistance", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_CriticalHitResistance_Parms, OldCriticalHitResistance), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::NewProp_OldCriticalHitResistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::NewProp_OldCriticalHitResistance_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::NewProp_OldCriticalHitResistance,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_CriticalHitResistance", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::GameAttributeSet_eventOnRep_CriticalHitResistance_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_Health_Statics
 	{
@@ -248,6 +596,86 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics
+	{
+		struct GameAttributeSet_eventOnRep_HealthRegeneration_Parms
+		{
+			FGameplayAttributeData OldHealthRegeneration;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldHealthRegeneration_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldHealthRegeneration;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::NewProp_OldHealthRegeneration_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::NewProp_OldHealthRegeneration = { "OldHealthRegeneration", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_HealthRegeneration_Parms, OldHealthRegeneration), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::NewProp_OldHealthRegeneration_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::NewProp_OldHealthRegeneration_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::NewProp_OldHealthRegeneration,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_HealthRegeneration", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::GameAttributeSet_eventOnRep_HealthRegeneration_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics
+	{
+		struct GameAttributeSet_eventOnRep_Intelligence_Parms
+		{
+			FGameplayAttributeData OldIntelligence;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldIntelligence_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldIntelligence;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::NewProp_OldIntelligence_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::NewProp_OldIntelligence = { "OldIntelligence", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_Intelligence_Parms, OldIntelligence), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::NewProp_OldIntelligence_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::NewProp_OldIntelligence_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::NewProp_OldIntelligence,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_Intelligence", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::GameAttributeSet_eventOnRep_Intelligence_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_Mana_Statics
 	{
 		struct GameAttributeSet_eventOnRep_Mana_Parms
@@ -285,6 +713,46 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_Mana_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics
+	{
+		struct GameAttributeSet_eventOnRep_ManaRegeneration_Parms
+		{
+			FGameplayAttributeData OldManaRegeneration;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldManaRegeneration_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldManaRegeneration;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::NewProp_OldManaRegeneration_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::NewProp_OldManaRegeneration = { "OldManaRegeneration", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_ManaRegeneration_Parms, OldManaRegeneration), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::NewProp_OldManaRegeneration_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::NewProp_OldManaRegeneration_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::NewProp_OldManaRegeneration,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_ManaRegeneration", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::GameAttributeSet_eventOnRep_ManaRegeneration_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -368,6 +836,126 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics
+	{
+		struct GameAttributeSet_eventOnRep_Resilience_Parms
+		{
+			FGameplayAttributeData OldResilience;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldResilience_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldResilience;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::NewProp_OldResilience_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::NewProp_OldResilience = { "OldResilience", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_Resilience_Parms, OldResilience), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::NewProp_OldResilience_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::NewProp_OldResilience_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::NewProp_OldResilience,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_Resilience", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::GameAttributeSet_eventOnRep_Resilience_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics
+	{
+		struct GameAttributeSet_eventOnRep_Strength_Parms
+		{
+			FGameplayAttributeData OldStrength;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldStrength_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldStrength;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::NewProp_OldStrength_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::NewProp_OldStrength = { "OldStrength", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_Strength_Parms, OldStrength), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::NewProp_OldStrength_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::NewProp_OldStrength_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::NewProp_OldStrength,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_Strength", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::GameAttributeSet_eventOnRep_Strength_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics
+	{
+		struct GameAttributeSet_eventOnRep_Vigor_Parms
+		{
+			FGameplayAttributeData OldVigor;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_OldVigor_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_OldVigor;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::NewProp_OldVigor_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::NewProp_OldVigor = { "OldVigor", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAttributeSet_eventOnRep_Vigor_Parms, OldVigor), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::NewProp_OldVigor_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::NewProp_OldVigor_MetaData)) }; // 1256614452
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::NewProp_OldVigor,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAttributeSet, nullptr, "OnRep_Vigor", nullptr, nullptr, sizeof(Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::GameAttributeSet_eventOnRep_Vigor_Parms), Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UGameAttributeSet);
 	UClass* Z_Construct_UClass_UGameAttributeSet_NoRegister()
 	{
@@ -380,6 +968,54 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Armor_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Armor;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ArmorPenetration_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ArmorPenetration;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BlockChance_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_BlockChance;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CriticalHitChance_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_CriticalHitChance;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CriticalHitDamage_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_CriticalHitDamage;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CriticalHitResistance_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_CriticalHitResistance;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_HealthRegeneration_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_HealthRegeneration;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ManaRegeneration_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ManaRegeneration;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Strength_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Strength;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Intelligence_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Intelligence;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Resilience_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Resilience;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Vigor_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Vigor;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Health_MetaData[];
 #endif
@@ -405,10 +1041,22 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 		(UObject* (*)())Z_Construct_UPackage__Script_Aura,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UGameAttributeSet_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_Armor, "OnRep_Armor" }, // 3339845675
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_ArmorPenetration, "OnRep_ArmorPenetration" }, // 893447896
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_BlockChance, "OnRep_BlockChance" }, // 2893426450
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitChance, "OnRep_CriticalHitChance" }, // 1378847180
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitDamage, "OnRep_CriticalHitDamage" }, // 102524587
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_CriticalHitResistance, "OnRep_CriticalHitResistance" }, // 1050118048
 		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_Health, "OnRep_Health" }, // 4147260753
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_HealthRegeneration, "OnRep_HealthRegeneration" }, // 557713788
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_Intelligence, "OnRep_Intelligence" }, // 417691877
 		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_Mana, "OnRep_Mana" }, // 1848597734
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_ManaRegeneration, "OnRep_ManaRegeneration" }, // 3474669466
 		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_MaxHealth, "OnRep_MaxHealth" }, // 3022758941
 		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_MaxMana, "OnRep_MaxMana" }, // 4093661663
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_Resilience, "OnRep_Resilience" }, // 2527418741
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_Strength, "OnRep_Strength" }, // 1427296307
+		{ &Z_Construct_UFunction_UGameAttributeSet_OnRep_Vigor, "OnRep_Vigor" }, // 1177950679
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::Class_MetaDataParams[] = {
@@ -417,9 +1065,99 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 	};
 #endif
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Armor_MetaData[] = {
+		{ "Category", "Basic Attributes" },
+		{ "Comment", "/*\n\x09 * Basic Attributes\n\x09 */" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+		{ "ToolTip", "* Basic Attributes" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Armor = { "Armor", "OnRep_Armor", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, Armor), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Armor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Armor_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ArmorPenetration_MetaData[] = {
+		{ "Category", "Basic Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ArmorPenetration = { "ArmorPenetration", "OnRep_ArmorPenetration", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, ArmorPenetration), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ArmorPenetration_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ArmorPenetration_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_BlockChance_MetaData[] = {
+		{ "Category", "Basic Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_BlockChance = { "BlockChance", "OnRep_BlockChance", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, BlockChance), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_BlockChance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_BlockChance_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitChance_MetaData[] = {
+		{ "Category", "Basic Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitChance = { "CriticalHitChance", "OnRep_CriticalHitChance", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, CriticalHitChance), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitChance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitChance_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitDamage_MetaData[] = {
+		{ "Category", "Basic Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitDamage = { "CriticalHitDamage", "OnRep_CriticalHitDamage", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, CriticalHitDamage), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitDamage_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitResistance_MetaData[] = {
+		{ "Category", "Basic Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitResistance = { "CriticalHitResistance", "OnRep_CriticalHitResistance", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, CriticalHitResistance), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitResistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitResistance_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_HealthRegeneration_MetaData[] = {
+		{ "Category", "Basic Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_HealthRegeneration = { "HealthRegeneration", "OnRep_HealthRegeneration", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, HealthRegeneration), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_HealthRegeneration_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_HealthRegeneration_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ManaRegeneration_MetaData[] = {
+		{ "Category", "Basic Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ManaRegeneration = { "ManaRegeneration", "OnRep_ManaRegeneration", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, ManaRegeneration), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ManaRegeneration_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ManaRegeneration_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Strength_MetaData[] = {
+		{ "Category", "Secondary Attributes" },
+		{ "Comment", "/*\n\x09 * Secondary Attributes\n\x09 */" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+		{ "ToolTip", "* Secondary Attributes" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Strength = { "Strength", "OnRep_Strength", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, Strength), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Strength_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Strength_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Intelligence_MetaData[] = {
+		{ "Category", "Secondary Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Intelligence = { "Intelligence", "OnRep_Intelligence", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, Intelligence), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Intelligence_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Intelligence_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Resilience_MetaData[] = {
+		{ "Category", "Secondary Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Resilience = { "Resilience", "OnRep_Resilience", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, Resilience), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Resilience_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Resilience_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Vigor_MetaData[] = {
+		{ "Category", "Secondary Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Vigor = { "Vigor", "OnRep_Vigor", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, Vigor), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Vigor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Vigor_MetaData)) }; // 1256614452
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Health_MetaData[] = {
 		{ "Category", "Primary Attributes" },
+		{ "Comment", "/*\n\x09 * Primary Attributes\n\x09 */" },
 		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+		{ "ToolTip", "* Primary Attributes" },
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Health = { "Health", "OnRep_Health", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, Health), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Health_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Health_MetaData)) }; // 1256614452
@@ -445,6 +1183,18 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_MaxMana = { "MaxMana", "OnRep_MaxMana", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, MaxMana), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_MaxMana_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_MaxMana_MetaData)) }; // 1256614452
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UGameAttributeSet_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Armor,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ArmorPenetration,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_BlockChance,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitChance,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitDamage,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_CriticalHitResistance,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_HealthRegeneration,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ManaRegeneration,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Strength,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Intelligence,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Resilience,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Vigor,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Health,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_MaxHealth,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Mana,
@@ -483,12 +1233,36 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 
 	void UGameAttributeSet::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const
 	{
+		static const FName Name_Armor(TEXT("Armor"));
+		static const FName Name_ArmorPenetration(TEXT("ArmorPenetration"));
+		static const FName Name_BlockChance(TEXT("BlockChance"));
+		static const FName Name_CriticalHitChance(TEXT("CriticalHitChance"));
+		static const FName Name_CriticalHitDamage(TEXT("CriticalHitDamage"));
+		static const FName Name_CriticalHitResistance(TEXT("CriticalHitResistance"));
+		static const FName Name_HealthRegeneration(TEXT("HealthRegeneration"));
+		static const FName Name_ManaRegeneration(TEXT("ManaRegeneration"));
+		static const FName Name_Strength(TEXT("Strength"));
+		static const FName Name_Intelligence(TEXT("Intelligence"));
+		static const FName Name_Resilience(TEXT("Resilience"));
+		static const FName Name_Vigor(TEXT("Vigor"));
 		static const FName Name_Health(TEXT("Health"));
 		static const FName Name_MaxHealth(TEXT("MaxHealth"));
 		static const FName Name_Mana(TEXT("Mana"));
 		static const FName Name_MaxMana(TEXT("MaxMana"));
 
 		const bool bIsValid = true
+			&& Name_Armor == ClassReps[(int32)ENetFields_Private::Armor].Property->GetFName()
+			&& Name_ArmorPenetration == ClassReps[(int32)ENetFields_Private::ArmorPenetration].Property->GetFName()
+			&& Name_BlockChance == ClassReps[(int32)ENetFields_Private::BlockChance].Property->GetFName()
+			&& Name_CriticalHitChance == ClassReps[(int32)ENetFields_Private::CriticalHitChance].Property->GetFName()
+			&& Name_CriticalHitDamage == ClassReps[(int32)ENetFields_Private::CriticalHitDamage].Property->GetFName()
+			&& Name_CriticalHitResistance == ClassReps[(int32)ENetFields_Private::CriticalHitResistance].Property->GetFName()
+			&& Name_HealthRegeneration == ClassReps[(int32)ENetFields_Private::HealthRegeneration].Property->GetFName()
+			&& Name_ManaRegeneration == ClassReps[(int32)ENetFields_Private::ManaRegeneration].Property->GetFName()
+			&& Name_Strength == ClassReps[(int32)ENetFields_Private::Strength].Property->GetFName()
+			&& Name_Intelligence == ClassReps[(int32)ENetFields_Private::Intelligence].Property->GetFName()
+			&& Name_Resilience == ClassReps[(int32)ENetFields_Private::Resilience].Property->GetFName()
+			&& Name_Vigor == ClassReps[(int32)ENetFields_Private::Vigor].Property->GetFName()
 			&& Name_Health == ClassReps[(int32)ENetFields_Private::Health].Property->GetFName()
 			&& Name_MaxHealth == ClassReps[(int32)ENetFields_Private::MaxHealth].Property->GetFName()
 			&& Name_Mana == ClassReps[(int32)ENetFields_Private::Mana].Property->GetFName()
@@ -507,9 +1281,9 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 		{ FEffectProperties::StaticStruct, Z_Construct_UScriptStruct_FEffectProperties_Statics::NewStructOps, TEXT("EffectProperties"), &Z_Registration_Info_UScriptStruct_EffectProperties, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FEffectProperties), 585162877U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UGameAttributeSet, UGameAttributeSet::StaticClass, TEXT("UGameAttributeSet"), &Z_Registration_Info_UClass_UGameAttributeSet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameAttributeSet), 1936862325U) },
+		{ Z_Construct_UClass_UGameAttributeSet, UGameAttributeSet::StaticClass, TEXT("UGameAttributeSet"), &Z_Registration_Info_UClass_UGameAttributeSet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameAttributeSet), 589057302U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_2174409901(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_4139718480(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_Statics::ScriptStructInfo),
 		nullptr, 0);

@@ -3,8 +3,8 @@
 
 #include "Player/PlayerCharacterController.h"
 #include "EnhancedInputSubsystems.h"
-#include "EnhancedInputComponent.h"
 #include "Interaction/EnemyInterface.h"
+#include "Input/GameInputComponent.h"
 
 APlayerCharacterController::APlayerCharacterController()
 {
@@ -43,9 +43,11 @@ void APlayerCharacterController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
 
-	UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
+	UGameInputComponent* GameInputComponent = CastChecked<UGameInputComponent>(InputComponent);
 
-	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerCharacterController::Move);
+	GameInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerCharacterController::Move);
+	
+	GameInputComponent->BindAbilityActions(InputConfig, this, &ThisClass::AbilityInputTagPressed, &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
 }
 
 void APlayerCharacterController::Move(const FInputActionValue& InputActionValue)
@@ -121,5 +123,20 @@ void APlayerCharacterController::CursorTrace()
 			}
 		}
 	}
+
+}
+
+void APlayerCharacterController::AbilityInputTagPressed(FGameplayTag InputTag)
+{
+
+}
+
+void APlayerCharacterController::AbilityInputTagReleased(FGameplayTag InputTag)
+{
+
+}
+
+void APlayerCharacterController::AbilityInputTagHeld(FGameplayTag InputTag)
+{
 
 }

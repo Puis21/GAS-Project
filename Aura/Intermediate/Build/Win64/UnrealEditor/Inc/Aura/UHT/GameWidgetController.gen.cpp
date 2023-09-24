@@ -124,6 +124,13 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 		}
 		return Z_Registration_Info_UScriptStruct_WidgetControllerParams.InnerSingleton;
 	}
+	DEFINE_FUNCTION(UGameWidgetController::execBroadcastInitialValues)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->BroadcastInitialValues();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UGameWidgetController::execSetWidgetControllerParams)
 	{
 		P_GET_STRUCT_REF(FWidgetControllerParams,Z_Param_Out_WCParams);
@@ -136,9 +143,32 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 	{
 		UClass* Class = UGameWidgetController::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "BroadcastInitialValues", &UGameWidgetController::execBroadcastInitialValues },
 			{ "SetWidgetControllerParams", &UGameWidgetController::execSetWidgetControllerParams },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UGameWidgetController_BroadcastInitialValues_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameWidgetController_BroadcastInitialValues_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/UI/WidgetController/GameWidgetController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameWidgetController_BroadcastInitialValues_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameWidgetController, nullptr, "BroadcastInitialValues", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameWidgetController_BroadcastInitialValues_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameWidgetController_BroadcastInitialValues_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameWidgetController_BroadcastInitialValues()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameWidgetController_BroadcastInitialValues_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UGameWidgetController_SetWidgetControllerParams_Statics
 	{
@@ -217,6 +247,7 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 		(UObject* (*)())Z_Construct_UPackage__Script_Aura,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UGameWidgetController_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UGameWidgetController_BroadcastInitialValues, "BroadcastInitialValues" }, // 2656629951
 		{ &Z_Construct_UFunction_UGameWidgetController_SetWidgetControllerParams, "SetWidgetControllerParams" }, // 617683022
 	};
 #if WITH_METADATA
@@ -304,9 +335,9 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 		{ FWidgetControllerParams::StaticStruct, Z_Construct_UScriptStruct_FWidgetControllerParams_Statics::NewStructOps, TEXT("WidgetControllerParams"), &Z_Registration_Info_UScriptStruct_WidgetControllerParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FWidgetControllerParams), 3257332673U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_UI_WidgetController_GameWidgetController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UGameWidgetController, UGameWidgetController::StaticClass, TEXT("UGameWidgetController"), &Z_Registration_Info_UClass_UGameWidgetController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameWidgetController), 3858745376U) },
+		{ Z_Construct_UClass_UGameWidgetController, UGameWidgetController::StaticClass, TEXT("UGameWidgetController"), &Z_Registration_Info_UClass_UGameWidgetController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameWidgetController), 108471916U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_UI_WidgetController_GameWidgetController_h_3099553780(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_UI_WidgetController_GameWidgetController_h_1472838554(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_UI_WidgetController_GameWidgetController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_UI_WidgetController_GameWidgetController_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_UI_WidgetController_GameWidgetController_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_UI_WidgetController_GameWidgetController_h_Statics::ScriptStructInfo),
 		nullptr, 0);

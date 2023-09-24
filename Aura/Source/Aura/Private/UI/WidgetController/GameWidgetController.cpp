@@ -18,4 +18,5 @@ void UGameWidgetController::BroadcastInitialValues()
 
 void UGameWidgetController::BindCallbacksToDependencies()
 {
+
 }

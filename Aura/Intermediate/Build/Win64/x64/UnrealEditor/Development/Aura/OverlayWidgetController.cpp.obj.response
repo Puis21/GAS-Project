@@ -279,12 +279,12 @@ C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Source\Aura\Priva
 /I ..\Plugins\Runtime\DataRegistry\Intermediate\Build\Win64\UnrealEditor\Inc\DataRegistry\UHT
 /I ..\Plugins\Runtime\DataRegistry\Source\DataRegistry\Public
 /I ..\Plugins\Runtime\DataRegistry\Source
-/I C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\UnrealEditor\Inc\Aura\UHT
-/I C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Source
-/I C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Source\Aura\Public
 /I ..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT
 /I ..\Plugins\EnhancedInput\Source\EnhancedInput\Public
 /I ..\Plugins\EnhancedInput\Source
+/I C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\UnrealEditor\Inc\Aura\UHT
+/I C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Source
+/I C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Source\Aura\Public
 /external:W0
 /external:I ThirdParty\mimalloc\include
 /external:I ThirdParty\LibTiff\Source\Win64

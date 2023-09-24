@@ -25,11 +25,13 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FWidgetControllerParams>(
 #define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_UI_WidgetController_GameWidgetController_h_40_SPARSE_DATA
 #define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_UI_WidgetController_GameWidgetController_h_40_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execBroadcastInitialValues); \
 	DECLARE_FUNCTION(execSetWidgetControllerParams);
 
 
 #define FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_UI_WidgetController_GameWidgetController_h_40_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execBroadcastInitialValues); \
 	DECLARE_FUNCTION(execSetWidgetControllerParams);
 
 
