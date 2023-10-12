@@ -275,10 +275,15 @@ void EmptyLinkFunctionForGeneratedCodeGameEffectActor() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_bDestroyOnEffectRemoval_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_bDestroyOnEffectApplication_MetaData[];
 #endif
-		static void NewProp_bDestroyOnEffectRemoval_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_bDestroyOnEffectRemoval;
+		static void NewProp_bDestroyOnEffectApplication_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bDestroyOnEffectApplication;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_bApplyEffectsToEnemies_MetaData[];
+#endif
+		static void NewProp_bApplyEffectsToEnemies_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bApplyEffectsToEnemies;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_InstantGameplayEffectClass_MetaData[];
 #endif
@@ -335,16 +340,27 @@ void EmptyLinkFunctionForGeneratedCodeGameEffectActor() {}
 	};
 #endif
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectRemoval_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectApplication_MetaData[] = {
 		{ "Category", "Applied Effects" },
 		{ "ModuleRelativePath", "Public/Actor/GameEffectActor.h" },
 	};
 #endif
-	void Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectRemoval_SetBit(void* Obj)
+	void Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectApplication_SetBit(void* Obj)
 	{
-		((AGameEffectActor*)Obj)->bDestroyOnEffectRemoval = 1;
+		((AGameEffectActor*)Obj)->bDestroyOnEffectApplication = 1;
 	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectRemoval = { "bDestroyOnEffectRemoval", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(AGameEffectActor), &Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectRemoval_SetBit, METADATA_PARAMS(Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectRemoval_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectRemoval_MetaData)) };
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectApplication = { "bDestroyOnEffectApplication", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(AGameEffectActor), &Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectApplication_SetBit, METADATA_PARAMS(Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectApplication_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectApplication_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bApplyEffectsToEnemies_MetaData[] = {
+		{ "Category", "Applied Effects" },
+		{ "ModuleRelativePath", "Public/Actor/GameEffectActor.h" },
+	};
+#endif
+	void Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bApplyEffectsToEnemies_SetBit(void* Obj)
+	{
+		((AGameEffectActor*)Obj)->bApplyEffectsToEnemies = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bApplyEffectsToEnemies = { "bApplyEffectsToEnemies", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(AGameEffectActor), &Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bApplyEffectsToEnemies_SetBit, METADATA_PARAMS(Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bApplyEffectsToEnemies_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bApplyEffectsToEnemies_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameEffectActor_Statics::NewProp_InstantGameplayEffectClass_MetaData[] = {
 		{ "Category", "Applied Effects" },
@@ -406,7 +422,8 @@ void EmptyLinkFunctionForGeneratedCodeGameEffectActor() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGameEffectActor_Statics::NewProp_ActorLevel = { "ActorLevel", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AGameEffectActor, ActorLevel), METADATA_PARAMS(Z_Construct_UClass_AGameEffectActor_Statics::NewProp_ActorLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameEffectActor_Statics::NewProp_ActorLevel_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGameEffectActor_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectRemoval,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bDestroyOnEffectApplication,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameEffectActor_Statics::NewProp_bApplyEffectsToEnemies,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameEffectActor_Statics::NewProp_InstantGameplayEffectClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameEffectActor_Statics::NewProp_InstantEffectApplicationPolicy_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameEffectActor_Statics::NewProp_InstantEffectApplicationPolicy,
@@ -462,9 +479,9 @@ void EmptyLinkFunctionForGeneratedCodeGameEffectActor() {}
 		{ EEffectRemovalPolicy_StaticEnum, TEXT("EEffectRemovalPolicy"), &Z_Registration_Info_UEnum_EEffectRemovalPolicy, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4120158913U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Actor_GameEffectActor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AGameEffectActor, AGameEffectActor::StaticClass, TEXT("AGameEffectActor"), &Z_Registration_Info_UClass_AGameEffectActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGameEffectActor), 2957785962U) },
+		{ Z_Construct_UClass_AGameEffectActor, AGameEffectActor::StaticClass, TEXT("AGameEffectActor"), &Z_Registration_Info_UClass_AGameEffectActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGameEffectActor), 1049867624U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Actor_GameEffectActor_h_2507451410(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Actor_GameEffectActor_h_2962657712(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Actor_GameEffectActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Actor_GameEffectActor_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Actor_GameEffectActor_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_Actor_GameEffectActor_h_Statics::EnumInfo));

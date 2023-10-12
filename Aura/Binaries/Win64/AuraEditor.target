@@ -1778,6 +1778,14 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Animation/MotionWarping/Binaries/Win64/UnrealEditor-MotionWarping.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Animation/MotionWarping/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Bridge/Binaries/Win64/UnrealEditor-Bridge.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -23957,6 +23965,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Animation/IKRig/IKRig.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Animation/MotionWarping/MotionWarping.uplugin",
 			"Type": "UFS"
 		},
 		{

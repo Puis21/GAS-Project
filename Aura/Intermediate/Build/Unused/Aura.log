@@ -2,33 +2,6 @@
   Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" AuraEditor Win64 Development -Project="C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Aura.uproject" -WaitMutex -FromMsBuild
   Log file: C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project).
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-1650.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-1650.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-2343.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-2343.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-2592.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-2592.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-2642.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-2642.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-4381.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-4381.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-7774.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-7774.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-7876.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-7876.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-8265.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-8265.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-9470.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Binaries\Win64\UnrealEditor-Aura-9470.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-1650.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-2343.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-2592.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-2642.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-4381.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-7774.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-7876.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-8265.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-9470.lib
   Building AuraEditor...
   Using Visual Studio 2022 14.34.31946 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
@@ -37,14 +10,15 @@
   [Upgrade] Suppress this message by setting 'IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_2;' in AuraEditor.Target.cs.
   [Upgrade] Alternatively you can set this to 'EngineIncludeOrderVersion.Latest' to always use the latest include order. This will potentially cause compile errors when integrating new versions of the engine.
   [Upgrade]
-  [Adaptive Build] Excluded from Aura unity file: GameAssetManager.cpp, GameGameplayTags.cpp, GameAbilitySystemComponent.cpp, GameAbilitySystemLibrary.cpp, GameAttributeSet.cpp, GameGameplayAbility.cpp, AttributeInfo.cpp, MMC_MaxHealth.cpp, MMC_MaxMana.cpp, EnemyCharacter.cpp, PlayerCharacter.cpp, PlayerCharacterBase.cpp, GameInputConfig.cpp, CombatInterface.cpp, GameCombatInterface.cpp, PlayerCharacterController.cpp, PlayerCharacterState.cpp, GameHUD.cpp, AttributeMenuWidgetController.cpp, GameWidgetController.cpp, OverlayWidgetController.cpp, AttributeInfo.gen.cpp, AttributeMenuWidgetController.gen.cpp, Aura.init.gen.cpp, EnemyCharacter.gen.cpp, GameAbilitySystemLibrary.gen.cpp, GameAssetManager.gen.cpp, GameAttributeSet.gen.cpp, GameCombatInterface.gen.cpp, GameGameplayAbility.gen.cpp, GameHUD.gen.cpp, GameInputConfig.gen.cpp, GameWidgetController.gen.cpp, MMC_MaxHealth.gen.cpp, MMC_MaxMana.gen.cpp, OverlayWidgetController.gen.cpp, PlayerCharacter.gen.cpp, PlayerCharacterBase.gen.cpp, PlayerCharacterState.gen.cpp
+  [Adaptive Build] Excluded from Aura unity file: Aura.cpp, PlayerGameModeBase.cpp, GameAbilityTypes.cpp, GameAssetManager.cpp, GameGameplayTags.cpp, GameAbilitySystemComponent.cpp, GameAbilitySystemGlobals.cpp, GameAbilitySystemLibrary.cpp, GameAttributeSet.cpp, GameDamageGameplayAbility.cpp, GameGameplayAbility.cpp, GameMeleeAttack.cpp, GameProjectileSpell.cpp, TargetDataUnderMouse.cpp, CharacterClassInfo.cpp, ExecCalc_Damage.cpp, GameEffectActor.cpp, GameProjectile.cpp, BTService_Attack.cpp, BTService_FindNearestPlayer.cpp, BTTask_Attack.cpp, GameAIController.cpp, EnemyCharacter.cpp, PlayerCharacterBase.cpp, EnemyInterface.cpp, GameCombatInterface.cpp, PlayerCharacterController.cpp, DamageTextComponent.cpp, Aura.init.gen.cpp, BTService_Attack.gen.cpp, BTService_FindNearestPlayer.gen.cpp, BTTask_Attack.gen.cpp, CharacterClassInfo.gen.cpp, DamageTextComponent.gen.cpp, EnemyCharacter.gen.cpp, EnemyInterface.gen.cpp, ExecCalc_Damage.gen.cpp, GameAbilitySystemComponent.gen.cpp, GameAbilitySystemGlobals.gen.cpp, GameAbilitySystemLibrary.gen.cpp, GameAbilityTypes.gen.cpp, GameAIController.gen.cpp, GameAttributeSet.gen.cpp, GameCombatInterface.gen.cpp, GameDamageGameplayAbility.gen.cpp, GameEffectActor.gen.cpp, GameGameplayAbility.gen.cpp, GameMeleeAttack.gen.cpp, GameProjectile.gen.cpp, GameProjectileSpell.gen.cpp, PlayerCharacter.gen.cpp, PlayerCharacterBase.gen.cpp, PlayerCharacterController.gen.cpp, PlayerGameModeBase.gen.cpp, TargetDataUnderMouse.gen.cpp
   Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
     Executing up to 8 processes, one per physical core
-  Building 3 actions with 3 processes...
-  [1/3] Link [x64] UnrealEditor-Aura.lib
+  Building 4 actions with 4 processes...
+  [1/4] Compile [x64] GameProjectile.cpp
+  [2/4] Link [x64] UnrealEditor-Aura.lib
      Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura.exp
-  [2/3] Link [x64] UnrealEditor-Aura.dll
+  [3/4] Link [x64] UnrealEditor-Aura.dll
      Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura.suppressed.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura.suppressed.exp
-  [3/3] WriteMetadata AuraEditor.target
-  Total time in Parallel executor: 0.89 seconds
-  Total execution time: 1.38 seconds
+  [4/4] WriteMetadata AuraEditor.target
+  Total time in Parallel executor: 6.47 seconds
+  Total execution time: 7.04 seconds

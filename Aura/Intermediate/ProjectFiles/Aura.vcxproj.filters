@@ -66,6 +66,9 @@
     <Filter Include="Source\Aura\Private">
       <UniqueIdentifier>{614644D7-6FA7-303B-9CB5-F9579003D315}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Aura\Private\GameAbilityTypes.cpp">
+      <Filter>Source\Aura\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Aura\Private\GameAssetManager.cpp">
       <Filter>Source\Aura\Private</Filter>
     </ClCompile>
@@ -78,6 +81,9 @@
     <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\GameAbilitySystemComponent.cpp">
       <Filter>Source\Aura\Private\AbilitySystem</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\GameAbilitySystemGlobals.cpp">
+      <Filter>Source\Aura\Private\AbilitySystem</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\GameAbilitySystemLibrary.cpp">
       <Filter>Source\Aura\Private\AbilitySystem</Filter>
     </ClCompile>
@@ -87,14 +93,38 @@
     <Filter Include="Source\Aura\Private\AbilitySystem\Abilities">
       <UniqueIdentifier>{DFA34C06-BED9-3B4B-AC97-7DAF6B5D85CD}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\Abilities\GameDamageGameplayAbility.cpp">
+      <Filter>Source\Aura\Private\AbilitySystem\Abilities</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\Abilities\GameGameplayAbility.cpp">
       <Filter>Source\Aura\Private\AbilitySystem\Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\Abilities\GameMeleeAttack.cpp">
+      <Filter>Source\Aura\Private\AbilitySystem\Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\Abilities\GameProjectileSpell.cpp">
+      <Filter>Source\Aura\Private\AbilitySystem\Abilities</Filter>
+    </ClCompile>
+    <Filter Include="Source\Aura\Private\AbilitySystem\AbilityTasks">
+      <UniqueIdentifier>{C3A9FB8B-DD1A-3A80-8CF7-326C27A917BC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\AbilityTasks\TargetDataUnderMouse.cpp">
+      <Filter>Source\Aura\Private\AbilitySystem\AbilityTasks</Filter>
     </ClCompile>
     <Filter Include="Source\Aura\Private\AbilitySystem\Data">
       <UniqueIdentifier>{1DE59CCC-C5AD-3B72-B94D-B45AD4BE9D00}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\Data\AttributeInfo.cpp">
       <Filter>Source\Aura\Private\AbilitySystem\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\Data\CharacterClassInfo.cpp">
+      <Filter>Source\Aura\Private\AbilitySystem\Data</Filter>
+    </ClCompile>
+    <Filter Include="Source\Aura\Private\AbilitySystem\ExecCalc">
+      <UniqueIdentifier>{45AAE052-C5B4-3806-8933-606C914005E1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Aura\Private\AbilitySystem\ExecCalc\ExecCalc_Damage.cpp">
+      <Filter>Source\Aura\Private\AbilitySystem\ExecCalc</Filter>
     </ClCompile>
     <Filter Include="Source\Aura\Private\AbilitySystem\MMC">
       <UniqueIdentifier>{23B4D7DA-4E27-312D-8B2F-4FE957DB37D4}</UniqueIdentifier>
@@ -110,6 +140,24 @@
     </Filter>
     <ClCompile Include="..\..\Source\Aura\Private\Actor\GameEffectActor.cpp">
       <Filter>Source\Aura\Private\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Aura\Private\Actor\GameProjectile.cpp">
+      <Filter>Source\Aura\Private\Actor</Filter>
+    </ClCompile>
+    <Filter Include="Source\Aura\Private\AI">
+      <UniqueIdentifier>{F8F1ABC1-CC51-3FC3-9A9D-250AB535F8BA}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Aura\Private\AI\BTService_Attack.cpp">
+      <Filter>Source\Aura\Private\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Aura\Private\AI\BTService_FindNearestPlayer.cpp">
+      <Filter>Source\Aura\Private\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Aura\Private\AI\BTTask_Attack.cpp">
+      <Filter>Source\Aura\Private\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Aura\Private\AI\GameAIController.cpp">
+      <Filter>Source\Aura\Private\AI</Filter>
     </ClCompile>
     <Filter Include="Source\Aura\Private\Character">
       <UniqueIdentifier>{02E07034-0FE1-3A7C-A01D-10DA4A11D5EE}</UniqueIdentifier>
@@ -165,6 +213,9 @@
     <Filter Include="Source\Aura\Private\UI\Widget">
       <UniqueIdentifier>{24B7270D-1495-3C1D-8624-24B5BD522F15}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Aura\Private\UI\Widget\DamageTextComponent.cpp">
+      <Filter>Source\Aura\Private\UI\Widget</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Aura\Private\UI\Widget\GameUserWidget.cpp">
       <Filter>Source\Aura\Private\UI\Widget</Filter>
     </ClCompile>
@@ -183,6 +234,9 @@
     <Filter Include="Source\Aura\Public">
       <UniqueIdentifier>{812D085E-218E-32A1-B6D9-A817B3D0072A}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Aura\Public\GameAbilityTypes.h">
+      <Filter>Source\Aura\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Aura\Public\GameAssetManager.h">
       <Filter>Source\Aura\Public</Filter>
     </ClInclude>
@@ -195,6 +249,9 @@
     <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\GameAbilitySystemComponent.h">
       <Filter>Source\Aura\Public\AbilitySystem</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\GameAbilitySystemGlobals.h">
+      <Filter>Source\Aura\Public\AbilitySystem</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\GameAbilitySystemLibrary.h">
       <Filter>Source\Aura\Public\AbilitySystem</Filter>
     </ClInclude>
@@ -204,14 +261,38 @@
     <Filter Include="Source\Aura\Public\AbilitySystem\Abilities">
       <UniqueIdentifier>{86B8CD5C-F5F0-31A8-90A9-E38073EC176F}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\Abilities\GameDamageGameplayAbility.h">
+      <Filter>Source\Aura\Public\AbilitySystem\Abilities</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\Abilities\GameGameplayAbility.h">
       <Filter>Source\Aura\Public\AbilitySystem\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\Abilities\GameMeleeAttack.h">
+      <Filter>Source\Aura\Public\AbilitySystem\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\Abilities\GameProjectileSpell.h">
+      <Filter>Source\Aura\Public\AbilitySystem\Abilities</Filter>
+    </ClInclude>
+    <Filter Include="Source\Aura\Public\AbilitySystem\AbilityTasks">
+      <UniqueIdentifier>{4B70318B-AB04-3DCD-99BF-AE86B9C39812}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\AbilityTasks\TargetDataUnderMouse.h">
+      <Filter>Source\Aura\Public\AbilitySystem\AbilityTasks</Filter>
     </ClInclude>
     <Filter Include="Source\Aura\Public\AbilitySystem\Data">
       <UniqueIdentifier>{FF426A13-05E2-3736-B7C4-5F4B5E95E426}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\Data\AttributeInfo.h">
       <Filter>Source\Aura\Public\AbilitySystem\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\Data\CharacterClassInfo.h">
+      <Filter>Source\Aura\Public\AbilitySystem\Data</Filter>
+    </ClInclude>
+    <Filter Include="Source\Aura\Public\AbilitySystem\ExecCalc">
+      <UniqueIdentifier>{CBE49B44-EA0F-3207-9F2E-7669B93049DD}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Aura\Public\AbilitySystem\ExecCalc\ExecCalc_Damage.h">
+      <Filter>Source\Aura\Public\AbilitySystem\ExecCalc</Filter>
     </ClInclude>
     <Filter Include="Source\Aura\Public\AbilitySystem\MMC">
       <UniqueIdentifier>{A24E1B5D-23FF-36AE-8C96-3CF06109FB57}</UniqueIdentifier>
@@ -227,6 +308,24 @@
     </Filter>
     <ClInclude Include="..\..\Source\Aura\Public\Actor\GameEffectActor.h">
       <Filter>Source\Aura\Public\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Aura\Public\Actor\GameProjectile.h">
+      <Filter>Source\Aura\Public\Actor</Filter>
+    </ClInclude>
+    <Filter Include="Source\Aura\Public\AI">
+      <UniqueIdentifier>{E396299D-B63E-3AFD-B1BD-92175877A8E0}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Aura\Public\AI\BTService_Attack.h">
+      <Filter>Source\Aura\Public\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Aura\Public\AI\BTService_FindNearestPlayer.h">
+      <Filter>Source\Aura\Public\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Aura\Public\AI\BTTask_Attack.h">
+      <Filter>Source\Aura\Public\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Aura\Public\AI\GameAIController.h">
+      <Filter>Source\Aura\Public\AI</Filter>
     </ClInclude>
     <Filter Include="Source\Aura\Public\Character">
       <UniqueIdentifier>{5BC97E21-9AE0-3A5A-B1AE-66CDA5B00EB5}</UniqueIdentifier>
@@ -282,6 +381,9 @@
     <Filter Include="Source\Aura\Public\UI\Widget">
       <UniqueIdentifier>{94ECFD0D-3C45-3C22-8F23-53F6B52E3FDE}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Aura\Public\UI\Widget\DamageTextComponent.h">
+      <Filter>Source\Aura\Public\UI\Widget</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Aura\Public\UI\Widget\GameUserWidget.h">
       <Filter>Source\Aura\Public\UI\Widget</Filter>
     </ClInclude>

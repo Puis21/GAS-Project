@@ -38,6 +38,10 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FEffectProperties>();
 	DECLARE_FUNCTION(execOnRep_Resilience); \
 	DECLARE_FUNCTION(execOnRep_Intelligence); \
 	DECLARE_FUNCTION(execOnRep_Strength); \
+	DECLARE_FUNCTION(execOnRep_PhysicalResistance); \
+	DECLARE_FUNCTION(execOnRep_ArcaneResistance); \
+	DECLARE_FUNCTION(execOnRep_LightningResistance); \
+	DECLARE_FUNCTION(execOnRep_FireResistance); \
 	DECLARE_FUNCTION(execOnRep_MaxMana); \
 	DECLARE_FUNCTION(execOnRep_Mana); \
 	DECLARE_FUNCTION(execOnRep_MaxHealth); \
@@ -58,6 +62,10 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FEffectProperties>();
 	DECLARE_FUNCTION(execOnRep_Resilience); \
 	DECLARE_FUNCTION(execOnRep_Intelligence); \
 	DECLARE_FUNCTION(execOnRep_Strength); \
+	DECLARE_FUNCTION(execOnRep_PhysicalResistance); \
+	DECLARE_FUNCTION(execOnRep_ArcaneResistance); \
+	DECLARE_FUNCTION(execOnRep_LightningResistance); \
+	DECLARE_FUNCTION(execOnRep_FireResistance); \
 	DECLARE_FUNCTION(execOnRep_MaxMana); \
 	DECLARE_FUNCTION(execOnRep_Mana); \
 	DECLARE_FUNCTION(execOnRep_MaxHealth); \
@@ -87,6 +95,10 @@ public: \
 		Intelligence, \
 		Resilience, \
 		Vigor, \
+		FireResistance, \
+		LightningResistance, \
+		ArcaneResistance, \
+		PhysicalResistance, \
 		Health, \
 		MaxHealth, \
 		Mana, \
@@ -120,6 +132,10 @@ public: \
 		Intelligence, \
 		Resilience, \
 		Vigor, \
+		FireResistance, \
+		LightningResistance, \
+		ArcaneResistance, \
+		PhysicalResistance, \
 		Health, \
 		MaxHealth, \
 		Mana, \

@@ -7,6 +7,10 @@
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
 #include "GameGameplayTags.h"
+#include "Interaction/GameCombatInterface.h"
+#include "Kismet/GameplayStatics.h"
+#include "Player/PlayerCharacterController.h"
+#include "AbilitySystem/GameAbilitySystemLibrary.h"
 
 UGameAttributeSet::UGameAttributeSet()
 {
@@ -29,6 +33,13 @@ UGameAttributeSet::UGameAttributeSet()
 	TagsToAttributes.Add(GameplayTags.Attributes_Basic_ManaRegeneration, GetManaRegenerationAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Basic_MaxHealth, GetMaxHealthAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Basic_MaxMana, GetMaxManaAttribute);
+
+	/* Resistance Attributes */
+	TagsToAttributes.Add(GameplayTags.Attributes_Resistance_Arcane, GetArcaneResistanceAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Resistance_Fire, GetFireResistanceAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Resistance_Lightning, GetLightningResistanceAttribute);
+	TagsToAttributes.Add(GameplayTags.Attributes_Resistance_Physical, GetPhysicalResistanceAttribute);
+
 
 }
 
@@ -54,6 +65,13 @@ void UGameAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 	DOREPLIFETIME_CONDITION_NOTIFY(UGameAttributeSet, CriticalHitResistance, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UGameAttributeSet, HealthRegeneration, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UGameAttributeSet, ManaRegeneration, COND_None, REPNOTIFY_Always);
+
+	// Resistance Attributes
+
+	DOREPLIFETIME_CONDITION_NOTIFY(UGameAttributeSet, FireResistance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UGameAttributeSet, LightningResistance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UGameAttributeSet, ArcaneResistance, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UGameAttributeSet, PhysicalResistance, COND_None, REPNOTIFY_Always);
 
 }
 
@@ -91,7 +109,7 @@ void UGameAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackData
 		}
 		if (Props.SourceController)
 		{
-			ACharacter* SourceCharacter = Cast<ACharacter>(Props.SourceController->GetPawn());
+			Props.SourceCharacter = Cast<ACharacter>(Props.SourceController->GetPawn());
 		}
 	}
 
@@ -104,7 +122,6 @@ void UGameAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackData
 	}
 }
 
-
 void UGameAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
 {
 	Super::PostGameplayEffectExecute(Data);
@@ -115,12 +132,59 @@ void UGameAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
 	{
 		SetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));
+		UE_LOG(LogTemp, Warning, TEXT("Changed Health on %s, Health: %f"), *Props.TargetAvatarActor->GetName(), GetHealth());
 	}
 	if (Data.EvaluatedData.Attribute == GetManaAttribute())
 	{
 		SetMana(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));
 	}
-	
+	if (Data.EvaluatedData.Attribute == GetIncomingDamageAttribute())
+	{
+		const float LocalIncomingDamage = GetIncomingDamage();
+		SetIncomingDamage(0);
+		if (LocalIncomingDamage > 0.f)
+		{
+			const float NewHealth = GetHealth() - LocalIncomingDamage;
+			SetHealth(FMath::Clamp(NewHealth, 0.f, GetMaxHealth()));
+
+			const bool bFatal = NewHealth <= 0.f;
+			if (bFatal)
+			{
+				IGameCombatInterface* CombatInterface = Cast<IGameCombatInterface>(Props.TargetAvatarActor);
+				if (CombatInterface)
+				{
+					CombatInterface->Die();
+				}
+			}
+			else
+			{
+				FGameplayTagContainer TagContainer;
+				TagContainer.AddTag(FGameGameplayTags::Get().Effects_HitReact);
+				Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
+			}
+
+			const bool bBlock = UGameAbilitySystemLibrary::IsBlockedHit(Props.EffectContextHandle);
+			const bool bCriticalHit = UGameAbilitySystemLibrary::IsCriticalHit(Props.EffectContextHandle);
+			ShowFloatingText(Props, LocalIncomingDamage, bBlock, bCriticalHit);
+		}
+	}
+}
+
+
+void UGameAttributeSet::ShowFloatingText(const FEffectProperties& Props, float Damage, bool bBlockedHit, bool bCriticalHit) const
+{
+	if (Props.SourceCharacter != Props.TargetCharacter)
+	{
+		if (APlayerCharacterController* PC = Cast<APlayerCharacterController>(Props.SourceCharacter->Controller))
+		{
+			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bBlockedHit, bCriticalHit);
+			return;
+		}
+		if (APlayerCharacterController* PC = Cast<APlayerCharacterController>(Props.TargetCharacter->Controller))
+		{
+			PC->ShowDamageNumber(Damage, Props.TargetCharacter, bBlockedHit, bCriticalHit);
+		}
+	}
 }
 
 void UGameAttributeSet::OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth) const
@@ -141,6 +205,26 @@ void UGameAttributeSet::OnRep_Mana(const FGameplayAttributeData& OldMana) const
 void UGameAttributeSet::OnRep_MaxMana(const FGameplayAttributeData& OldMaxMana) const
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UGameAttributeSet, MaxMana, OldMaxMana);
+}
+
+void UGameAttributeSet::OnRep_FireResistance(const FGameplayAttributeData& OldFireResistance) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UGameAttributeSet, FireResistance, OldFireResistance);
+}
+
+void UGameAttributeSet::OnRep_LightningResistance(const FGameplayAttributeData& OldLightningResistance) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UGameAttributeSet, LightningResistance, OldLightningResistance);
+}
+
+void UGameAttributeSet::OnRep_ArcaneResistance(const FGameplayAttributeData& OldArcaneResistance) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UGameAttributeSet, ArcaneResistance, OldArcaneResistance);
+}
+
+void UGameAttributeSet::OnRep_PhysicalResistance(const FGameplayAttributeData& OldPhysicalResistance) const
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UGameAttributeSet, PhysicalResistance, OldPhysicalResistance);
 }
 
 void UGameAttributeSet::OnRep_Strength(const FGameplayAttributeData& OldStrength) const

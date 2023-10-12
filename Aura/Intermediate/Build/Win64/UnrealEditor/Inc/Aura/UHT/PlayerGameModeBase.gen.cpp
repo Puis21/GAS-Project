@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerGameModeBase() {}
 // Cross Module References
 	AURA_API UClass* Z_Construct_UClass_APlayerGameModeBase();
 	AURA_API UClass* Z_Construct_UClass_APlayerGameModeBase_NoRegister();
+	AURA_API UClass* Z_Construct_UClass_UCharacterClassInfo_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
@@ -28,6 +29,11 @@ void EmptyLinkFunctionForGeneratedCodePlayerGameModeBase() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CharacterClassInfo_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_CharacterClassInfo;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -44,6 +50,16 @@ void EmptyLinkFunctionForGeneratedCodePlayerGameModeBase() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerGameModeBase_Statics::NewProp_CharacterClassInfo_MetaData[] = {
+		{ "Category", "Character Class Defaults" },
+		{ "ModuleRelativePath", "Game/PlayerGameModeBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_APlayerGameModeBase_Statics::NewProp_CharacterClassInfo = { "CharacterClassInfo", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APlayerGameModeBase, CharacterClassInfo), Z_Construct_UClass_UCharacterClassInfo_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APlayerGameModeBase_Statics::NewProp_CharacterClassInfo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerGameModeBase_Statics::NewProp_CharacterClassInfo_MetaData)) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APlayerGameModeBase_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerGameModeBase_Statics::NewProp_CharacterClassInfo,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APlayerGameModeBase_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APlayerGameModeBase>::IsAbstract,
 	};
@@ -53,11 +69,11 @@ void EmptyLinkFunctionForGeneratedCodePlayerGameModeBase() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_APlayerGameModeBase_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_APlayerGameModeBase_Statics::PropPointers),
 		0,
 		0x009002ACu,
 		METADATA_PARAMS(Z_Construct_UClass_APlayerGameModeBase_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerGameModeBase_Statics::Class_MetaDataParams))
@@ -82,9 +98,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerGameModeBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Game_PlayerGameModeBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APlayerGameModeBase, APlayerGameModeBase::StaticClass, TEXT("APlayerGameModeBase"), &Z_Registration_Info_UClass_APlayerGameModeBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerGameModeBase), 852622849U) },
+		{ Z_Construct_UClass_APlayerGameModeBase, APlayerGameModeBase::StaticClass, TEXT("APlayerGameModeBase"), &Z_Registration_Info_UClass_APlayerGameModeBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerGameModeBase), 923297415U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Game_PlayerGameModeBase_h_129360508(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Game_PlayerGameModeBase_h_3571102530(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Game_PlayerGameModeBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Game_PlayerGameModeBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

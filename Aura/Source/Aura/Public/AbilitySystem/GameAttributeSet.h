@@ -125,6 +125,26 @@ public:
 	ATTRIBUTE_ACCESSORS(UGameAttributeSet, Vigor);
 
 	/*
+	* Resistance Attributes
+	*/
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_FireResistance, Category = "Resistance Attributes")
+		FGameplayAttributeData FireResistance;
+	ATTRIBUTE_ACCESSORS(UGameAttributeSet, FireResistance);
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_LightningResistance, Category = "Resistance Attributes")
+		FGameplayAttributeData LightningResistance;
+	ATTRIBUTE_ACCESSORS(UGameAttributeSet, LightningResistance);
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_ArcaneResistance, Category = "Resistance Attributes")
+		FGameplayAttributeData ArcaneResistance;
+	ATTRIBUTE_ACCESSORS(UGameAttributeSet, ArcaneResistance);
+
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_PhysicalResistance, Category = "Resistance Attributes")
+		FGameplayAttributeData PhysicalResistance;
+	ATTRIBUTE_ACCESSORS(UGameAttributeSet, PhysicalResistance)
+
+	/*
 	 * Primary Attributes
 	 */
 
@@ -145,6 +165,14 @@ public:
 	FGameplayAttributeData MaxMana;
 	ATTRIBUTE_ACCESSORS(UGameAttributeSet, MaxMana);
 
+	/*
+	* Meta Attributes
+	*/
+
+	UPROPERTY(BlueprintReadOnly, Category = "Meta Attributes")
+	FGameplayAttributeData IncomingDamage;
+	ATTRIBUTE_ACCESSORS(UGameAttributeSet, IncomingDamage);
+
 	UFUNCTION()
 	void OnRep_Health(const FGameplayAttributeData& OldHealth) const;
 
@@ -156,6 +184,18 @@ public:
 
 	UFUNCTION()
 	void OnRep_MaxMana(const FGameplayAttributeData& OldMaxMana) const;
+
+	UFUNCTION()
+	void OnRep_FireResistance(const FGameplayAttributeData& OldFireResistance) const;
+
+	UFUNCTION()
+	void OnRep_LightningResistance(const FGameplayAttributeData& OldLightningResistance) const;
+
+	UFUNCTION()
+	void OnRep_ArcaneResistance(const FGameplayAttributeData& OldArcaneResistance) const;
+
+	UFUNCTION()
+	void OnRep_PhysicalResistance(const FGameplayAttributeData& OldPhysicalResistance) const;
 
 	UFUNCTION()
 	void OnRep_Strength(const FGameplayAttributeData& OldStrength) const;
@@ -196,4 +236,5 @@ public:
 private:
 
 	void SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Props) const;
+	void ShowFloatingText(const FEffectProperties& Props, float Damage, bool bBlockedHit, bool bCriticalHit) const;
 };

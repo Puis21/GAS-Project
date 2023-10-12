@@ -1,0 +1,33 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\gameabilitytypes.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\x64\\auraeditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\aura\\definitions.aura.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\source\\aura\\public\\gameabilitytypes.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\gameplayeffecttypes.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\activegameplayeffecthandle.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\activegameplayeffecthandle.generated.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\gameplayeffectattributecapturedefinition.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\attributeset.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\engine\\datatable.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\engine\\public\\datatableutils.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\datatable.generated.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\attributeset.generated.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\gameplayeffectattributecapturedefinition.generated.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\gameplaytags\\classes\\gameplaytagcontainer.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\core\\public\\misc\\comparisonutility.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplaytags\\uht\\gameplaytagcontainer.generated.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\physicscore\\public\\physicalmaterials\\physicalmaterial.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\physicscore\\public\\physicssettingsenums.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\physicscore\\uht\\physicssettingsenums.generated.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\physicscore\\uht\\physicalmaterial.generated.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\gameplayeffecttypes.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\gameabilitytypes.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
