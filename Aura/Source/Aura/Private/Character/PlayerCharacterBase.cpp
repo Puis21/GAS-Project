@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Aura/Aura.h"
 #include "GameGameplayTags.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 APlayerCharacterBase::APlayerCharacterBase()
@@ -44,6 +45,8 @@ void APlayerCharacterBase::Die()
 
 void APlayerCharacterBase::MulticastHandleDeath_Implementation()
 {
+	UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation(), GetActorRotation());
+
 	Weapon->SetSimulatePhysics(true);
 	Weapon->SetEnableGravity(true);
 	Weapon->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
@@ -78,17 +81,21 @@ AActor* APlayerCharacterBase::GetAvatar_Implementation()
 FVector APlayerCharacterBase::GetCombatSocketLocation_Implementation(const FGameplayTag& MontageTag)
 {
 	const FGameGameplayTags& GameplayTags = FGameGameplayTags::Get();
-	if (MontageTag.MatchesTagExact(GameplayTags.Montage_Attack_Weapon) && IsValid(Weapon))
+	if (MontageTag.MatchesTagExact(GameplayTags.CombatSocket_Weapon) && IsValid(Weapon))
 	{
 		return Weapon->GetSocketLocation(WeaponTipSocketName);
 	}
-	if (MontageTag.MatchesTagExact(GameplayTags.Montage_Attack_LeftHand))
+	if (MontageTag.MatchesTagExact(GameplayTags.CombatSocket_LeftHand))
 	{
 		return GetMesh()->GetSocketLocation(LeftHandSocketName);
 	}
-	if (MontageTag.MatchesTagExact(GameplayTags.Montage_Attack_RightHand))
+	if (MontageTag.MatchesTagExact(GameplayTags.CombatSocket_RightHand))
 	{
 		return GetMesh()->GetSocketLocation(RightHandSocketName);
+	}
+	if (MontageTag.MatchesTagExact(GameplayTags.CombatSocket_Tail))
+	{
+		return GetMesh()->GetSocketLocation(TailSocketName);
 	}
 	return FVector();
 }
@@ -96,6 +103,38 @@ FVector APlayerCharacterBase::GetCombatSocketLocation_Implementation(const FGame
 TArray<FTaggedMontage> APlayerCharacterBase::GetAttackMontages_Implementation()
 {
 	return AttackMontages;
+}
+
+int32 APlayerCharacterBase::GetMinionCount_Implementation()
+{
+	return MinionCount;
+}
+
+UNiagaraSystem* APlayerCharacterBase::GetBloodEffect_Implementation()
+{
+	return BloodEffect;
+}
+
+FTaggedMontage APlayerCharacterBase::GetTaggedMontageByTag_Implementation(const FGameplayTag& MontageTag)
+{
+	for (FTaggedMontage TaggedMontage : AttackMontages)
+	{
+		if (TaggedMontage.MontageTag == MontageTag)
+		{
+			return TaggedMontage;
+		}
+	}
+	return FTaggedMontage();
+}
+
+void APlayerCharacterBase::IncremenetMinionCount_Implementation(int32 Amount)
+{
+	MinionCount += Amount;
+}
+
+ECharacterClass APlayerCharacterBase::GetCharacterClass_Implementation()
+{
+	return CharacterClass;
 }
 
 void APlayerCharacterBase::InitAbilityActorInfo()
@@ -125,7 +164,7 @@ void APlayerCharacterBase::AddCharacterAbilities()
 	if (!HasAuthority()) return;
 
 	GameASC->AddCharacterAbilities(StartupAbilities);
-
+	GameASC->AddCharacterPassiveAbilities(StartupPassiveAbilities);
 }
 
 void APlayerCharacterBase::Dissolve()

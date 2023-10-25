@@ -8,6 +8,7 @@
 #include "Aura/Public/AbilitySystem/GameAbilitySystemComponent.h"
 #include "ActiveGameplayEffectHandle.h"
 #include "GameplayEffect.h"
+#include "GameplayTagContainer.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeGameAbilitySystemComponent() {}
 // Cross Module References
@@ -17,6 +18,7 @@ void EmptyLinkFunctionForGeneratedCodeGameAbilitySystemComponent() {}
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAbilitySystemComponent_NoRegister();
 	GAMEPLAYABILITIES_API UScriptStruct* Z_Construct_UScriptStruct_FActiveGameplayEffectHandle();
 	GAMEPLAYABILITIES_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayEffectSpec();
+	GAMEPLAYTAGS_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayTag();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
 	DEFINE_FUNCTION(UGameAbilitySystemComponent::execClientEffectApplied)
@@ -29,11 +31,23 @@ void EmptyLinkFunctionForGeneratedCodeGameAbilitySystemComponent() {}
 		P_THIS->ClientEffectApplied_Implementation(Z_Param_AbilitySystemComponent,Z_Param_EffectSpec,Z_Param_ActiveEffectHandle);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UGameAbilitySystemComponent::execServerUpgradeAttribute)
+	{
+		P_GET_STRUCT(FGameplayTag,Z_Param_AttributeTag);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ServerUpgradeAttribute_Implementation(Z_Param_AttributeTag);
+		P_NATIVE_END;
+	}
 	struct GameAbilitySystemComponent_eventClientEffectApplied_Parms
 	{
 		UAbilitySystemComponent* AbilitySystemComponent;
 		FGameplayEffectSpec EffectSpec;
 		FActiveGameplayEffectHandle ActiveEffectHandle;
+	};
+	struct GameAbilitySystemComponent_eventServerUpgradeAttribute_Parms
+	{
+		FGameplayTag AttributeTag;
 	};
 	static FName NAME_UGameAbilitySystemComponent_ClientEffectApplied = FName(TEXT("ClientEffectApplied"));
 	void UGameAbilitySystemComponent::ClientEffectApplied(UAbilitySystemComponent* AbilitySystemComponent, FGameplayEffectSpec const& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle)
@@ -44,11 +58,19 @@ void EmptyLinkFunctionForGeneratedCodeGameAbilitySystemComponent() {}
 		Parms.ActiveEffectHandle=ActiveEffectHandle;
 		ProcessEvent(FindFunctionChecked(NAME_UGameAbilitySystemComponent_ClientEffectApplied),&Parms);
 	}
+	static FName NAME_UGameAbilitySystemComponent_ServerUpgradeAttribute = FName(TEXT("ServerUpgradeAttribute"));
+	void UGameAbilitySystemComponent::ServerUpgradeAttribute(FGameplayTag const& AttributeTag)
+	{
+		GameAbilitySystemComponent_eventServerUpgradeAttribute_Parms Parms;
+		Parms.AttributeTag=AttributeTag;
+		ProcessEvent(FindFunctionChecked(NAME_UGameAbilitySystemComponent_ServerUpgradeAttribute),&Parms);
+	}
 	void UGameAbilitySystemComponent::StaticRegisterNativesUGameAbilitySystemComponent()
 	{
 		UClass* Class = UGameAbilitySystemComponent::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "ClientEffectApplied", &UGameAbilitySystemComponent::execClientEffectApplied },
+			{ "ServerUpgradeAttribute", &UGameAbilitySystemComponent::execServerUpgradeAttribute },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -102,6 +124,42 @@ void EmptyLinkFunctionForGeneratedCodeGameAbilitySystemComponent() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AttributeTag_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_AttributeTag;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::NewProp_AttributeTag_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::NewProp_AttributeTag = { "AttributeTag", nullptr, (EPropertyFlags)0x0010000008000082, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameAbilitySystemComponent_eventServerUpgradeAttribute_Parms, AttributeTag), Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::NewProp_AttributeTag_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::NewProp_AttributeTag_MetaData)) }; // 1225434376
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::NewProp_AttributeTag,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAbilitySystemComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGameAbilitySystemComponent, nullptr, "ServerUpgradeAttribute", nullptr, nullptr, sizeof(GameAbilitySystemComponent_eventServerUpgradeAttribute_Parms), Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00220CC0, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UGameAbilitySystemComponent);
 	UClass* Z_Construct_UClass_UGameAbilitySystemComponent_NoRegister()
 	{
@@ -123,6 +181,7 @@ void EmptyLinkFunctionForGeneratedCodeGameAbilitySystemComponent() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UGameAbilitySystemComponent_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UGameAbilitySystemComponent_ClientEffectApplied, "ClientEffectApplied" }, // 2600006990
+		{ &Z_Construct_UFunction_UGameAbilitySystemComponent_ServerUpgradeAttribute, "ServerUpgradeAttribute" }, // 3902428391
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAbilitySystemComponent_Statics::Class_MetaDataParams[] = {
@@ -170,9 +229,9 @@ void EmptyLinkFunctionForGeneratedCodeGameAbilitySystemComponent() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAbilitySystemComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UGameAbilitySystemComponent, UGameAbilitySystemComponent::StaticClass, TEXT("UGameAbilitySystemComponent"), &Z_Registration_Info_UClass_UGameAbilitySystemComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameAbilitySystemComponent), 3860744225U) },
+		{ Z_Construct_UClass_UGameAbilitySystemComponent, UGameAbilitySystemComponent::StaticClass, TEXT("UGameAbilitySystemComponent"), &Z_Registration_Info_UClass_UGameAbilitySystemComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameAbilitySystemComponent), 3469754569U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAbilitySystemComponent_h_2103041355(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAbilitySystemComponent_h_805470180(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAbilitySystemComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAbilitySystemComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -16,15 +16,20 @@ void UGameProjectileSpell::ActivateAbility(const FGameplayAbilitySpecHandle Hand
 	
 }
 
-void UGameProjectileSpell::SpawnProjectile(const FVector& ProjectileTargetLocation)
+void UGameProjectileSpell::SpawnProjectile(const FVector& ProjectileTargetLocation, const FGameplayTag& SocketTag, bool bOverridePitch, float PitchOverride)
 {
 
 	const bool bIsServer = GetAvatarActorFromActorInfo()->HasAuthority();
 	if (!bIsServer) return;
 
-	const FVector SocketLocation = IGameCombatInterface::Execute_GetCombatSocketLocation(GetAvatarActorFromActorInfo(), FGameGameplayTags::Get().Montage_Attack_Weapon);
+	const FVector SocketLocation = IGameCombatInterface::Execute_GetCombatSocketLocation(GetAvatarActorFromActorInfo(), SocketTag);
 
 	FRotator Rotation = (ProjectileTargetLocation - SocketLocation).Rotation();
+
+	if (bOverridePitch)
+	{
+		Rotation.Pitch = PitchOverride;
+	}
 
 	FTransform SpawnTransform;
 	SpawnTransform.SetLocation(SocketLocation);

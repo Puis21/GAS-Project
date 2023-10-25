@@ -5,6 +5,8 @@
 #include "AbilitySystem/GameAttributeSet.h"
 #include "AbilitySystem/Data/AttributeInfo.h"
 #include "GameGameplayTags.h"
+#include "Player/PlayerCharacterState.h"
+#include "AbilitySystem/GameAbilitySystemComponent.h"
 
 void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 {
@@ -21,6 +23,20 @@ void UAttributeMenuWidgetController::BindCallbacksToDependencies()
 			}
 		);
 	}
+
+	APlayerCharacterState* PlayerCharacterState = CastChecked<APlayerCharacterState>(PlayerState);
+	PlayerCharacterState->OnAttributePointsChangedDelegate.AddLambda(
+		[this](int32 Points)
+		{
+			AttributePointsChangedDelegate.Broadcast(Points);
+		}
+	);
+}
+
+void UAttributeMenuWidgetController::UpgradeAttribute(const FGameplayTag& AttributeTag)
+{
+	UGameAbilitySystemComponent* GameASC = CastChecked<UGameAbilitySystemComponent>(AbilitySystemComponent);
+	GameASC->UpgradeAttribute(AttributeTag);
 }
 
 void UAttributeMenuWidgetController::BroadcastInitialValues()
@@ -35,5 +51,8 @@ void UAttributeMenuWidgetController::BroadcastInitialValues()
 		Info.AttributeValue = Pair.Value().GetNumericValue(AS);
 		AttributeInfoDelegate.Broadcast(Info);
 	}
+
+	APlayerCharacterState* AuraPlayerState = CastChecked<APlayerCharacterState>(PlayerState);
+	AttributePointsChangedDelegate.Broadcast(AuraPlayerState->GetAttributePoints());
 
 }

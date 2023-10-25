@@ -2,6 +2,11 @@
   Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" AuraEditor Win64 Development -Project="C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Aura.uproject" -WaitMutex -FromMsBuild
   Log file: C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project).
+  Invalidating makefile for AuraEditor (working set of source files changed)
+  Parsing headers for AuraEditor
+    Running Internal UnrealHeaderTool C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Aura.uproject C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\AuraEditor\Development\AuraEditor.uhtmanifest -WarningsAsErrors -installed
+  Total of 8 written
+  Reflection code generated for AuraEditor in 0.7960336 seconds
   Building AuraEditor...
   Using Visual Studio 2022 14.34.31946 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
@@ -10,15 +15,33 @@
   [Upgrade] Suppress this message by setting 'IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_2;' in AuraEditor.Target.cs.
   [Upgrade] Alternatively you can set this to 'EngineIncludeOrderVersion.Latest' to always use the latest include order. This will potentially cause compile errors when integrating new versions of the engine.
   [Upgrade]
-  [Adaptive Build] Excluded from Aura unity file: Aura.cpp, PlayerGameModeBase.cpp, GameAbilityTypes.cpp, GameAssetManager.cpp, GameGameplayTags.cpp, GameAbilitySystemComponent.cpp, GameAbilitySystemGlobals.cpp, GameAbilitySystemLibrary.cpp, GameAttributeSet.cpp, GameDamageGameplayAbility.cpp, GameGameplayAbility.cpp, GameMeleeAttack.cpp, GameProjectileSpell.cpp, TargetDataUnderMouse.cpp, CharacterClassInfo.cpp, ExecCalc_Damage.cpp, GameEffectActor.cpp, GameProjectile.cpp, BTService_Attack.cpp, BTService_FindNearestPlayer.cpp, BTTask_Attack.cpp, GameAIController.cpp, EnemyCharacter.cpp, PlayerCharacterBase.cpp, EnemyInterface.cpp, GameCombatInterface.cpp, PlayerCharacterController.cpp, DamageTextComponent.cpp, Aura.init.gen.cpp, BTService_Attack.gen.cpp, BTService_FindNearestPlayer.gen.cpp, BTTask_Attack.gen.cpp, CharacterClassInfo.gen.cpp, DamageTextComponent.gen.cpp, EnemyCharacter.gen.cpp, EnemyInterface.gen.cpp, ExecCalc_Damage.gen.cpp, GameAbilitySystemComponent.gen.cpp, GameAbilitySystemGlobals.gen.cpp, GameAbilitySystemLibrary.gen.cpp, GameAbilityTypes.gen.cpp, GameAIController.gen.cpp, GameAttributeSet.gen.cpp, GameCombatInterface.gen.cpp, GameDamageGameplayAbility.gen.cpp, GameEffectActor.gen.cpp, GameGameplayAbility.gen.cpp, GameMeleeAttack.gen.cpp, GameProjectile.gen.cpp, GameProjectileSpell.gen.cpp, PlayerCharacter.gen.cpp, PlayerCharacterBase.gen.cpp, PlayerCharacterController.gen.cpp, PlayerGameModeBase.gen.cpp, TargetDataUnderMouse.gen.cpp
+  [Adaptive Build] Excluded from Aura unity file: GameGameplayTags.cpp, GameAbilitySystemComponent.cpp, GameAbilitySystemLibrary.cpp, GameAttributeSet.cpp, GameProjectileSpell.cpp, GameSummonAbility.cpp, WaitCooldownChange.cpp, AbilityInfo.cpp, CharacterClassInfo.cpp, LevelUpInfo.cpp, ExecCalc_Damage.cpp, MMC_MaxHealth.cpp, MMC_MaxMana.cpp, GameProjectile.cpp, EnemyCharacter.cpp, PlayerCharacter.cpp, PlayerCharacterBase.cpp, GameCombatInterface.cpp, PlayerInterface.cpp, PlayerCharacterState.cpp, AttributeMenuWidgetController.cpp, GameWidgetController.cpp, OverlayWidgetController.cpp, AbilityInfo.gen.cpp, AttributeMenuWidgetController.gen.cpp, Aura.init.gen.cpp, CharacterClassInfo.gen.cpp, EnemyCharacter.gen.cpp, GameAttributeSet.gen.cpp, GameCombatInterface.gen.cpp, GameDamageGameplayAbility.gen.cpp, GameMeleeAttack.gen.cpp, GameProjectile.gen.cpp, GameProjectileSpell.gen.cpp, GameSummonAbility.gen.cpp, GameWidgetController.gen.cpp, LevelUpInfo.gen.cpp, OverlayWidgetController.gen.cpp, PlayerCharacter.gen.cpp, PlayerCharacterBase.gen.cpp, PlayerCharacterState.gen.cpp, PlayerInterface.gen.cpp, WaitCooldownChange.gen.cpp
   Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
     Executing up to 8 processes, one per physical core
-  Building 4 actions with 4 processes...
-  [1/4] Compile [x64] GameProjectile.cpp
-  [2/4] Link [x64] UnrealEditor-Aura.lib
-     Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura.exp
-  [3/4] Link [x64] UnrealEditor-Aura.dll
-     Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura.suppressed.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura.suppressed.exp
-  [4/4] WriteMetadata AuraEditor.target
-  Total time in Parallel executor: 6.47 seconds
-  Total execution time: 7.04 seconds
+  Building 22 actions with 8 processes...
+  [1/22] Compile [x64] PlayerInterface.gen.cpp
+  [2/22] Compile [x64] PlayerInterface.cpp
+  [3/22] Compile [x64] PlayerCharacter.gen.cpp
+  [4/22] Compile [x64] Aura.init.gen.cpp
+  [5/22] Compile [x64] AttributeMenuWidgetController.gen.cpp
+  [6/22] Compile [x64] MMC_MaxHealth.cpp
+  [7/22] Compile [x64] GameAttributeSet.gen.cpp
+  [8/22] Compile [x64] PlayerCharacterState.cpp
+  [9/22] Compile [x64] ExecCalc_Damage.cpp
+  [10/22] Compile [x64] OverlayWidgetController.cpp
+  [11/22] Compile [x64] AttributeMenuWidgetController.cpp
+  [12/22] Compile [x64] PlayerCharacterBase.cpp
+  [13/22] Compile [x64] MMC_MaxMana.cpp
+  [14/22] Compile [x64] EnemyCharacter.cpp
+  [15/22] Compile [x64] GameAttributeSet.cpp
+  [16/22] Compile [x64] Module.Aura.1_of_3.cpp
+  [17/22] Compile [x64] GameAbilitySystemComponent.cpp
+  [18/22] Compile [x64] PlayerCharacter.cpp
+  [19/22] Compile [x64] Module.Aura.3_of_3.cpp
+  [20/22] Link [x64] UnrealEditor-Aura-0001.lib
+     Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-0001.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-0001.exp
+  [21/22] Link [x64] UnrealEditor-Aura-0001.dll
+     Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-0001.suppressed.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Aura\GAS-Project\Aura\Intermediate\Build\Win64\x64\UnrealEditor\Development\Aura\UnrealEditor-Aura-0001.suppressed.exp
+  [22/22] WriteMetadata AuraEditor.target
+  Total time in Parallel executor: 12.11 seconds
+  Total execution time: 14.52 seconds

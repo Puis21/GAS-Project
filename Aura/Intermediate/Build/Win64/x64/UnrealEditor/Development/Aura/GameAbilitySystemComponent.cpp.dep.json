@@ -70,9 +70,14 @@
             "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\abilitysystemreplicationproxyinterface.generated.h",
             "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\abilitysystemcomponent.generated.h",
             "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\gameabilitysystemcomponent.generated.h",
-            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\source\\aura\\public\\gamegameplaytags.h",
             "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\source\\aura\\public\\abilitysystem\\abilities\\gamegameplayability.h",
-            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\gamegameplayability.generated.h"
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\gamegameplayability.generated.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\abilitysystemblueprintlibrary.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\abilities\\gameplayabilitytargetdatafilter.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\gameplayabilitytargetdatafilter.generated.h",
+            "c:\\program files\\epic games\\ue_5.2\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\abilitysystemblueprintlibrary.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\source\\aura\\public\\interaction\\playerinterface.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\aura\\gas-project\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\playerinterface.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

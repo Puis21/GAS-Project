@@ -6,6 +6,7 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Aura/Public/AbilitySystem/Abilities/GameProjectileSpell.h"
+#include "GameplayTagContainer.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeGameProjectileSpell() {}
 // Cross Module References
@@ -15,14 +16,18 @@ void EmptyLinkFunctionForGeneratedCodeGameProjectileSpell() {}
 	AURA_API UClass* Z_Construct_UClass_UGameProjectileSpell_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	GAMEPLAYTAGS_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayTag();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
 	DEFINE_FUNCTION(UGameProjectileSpell::execSpawnProjectile)
 	{
 		P_GET_STRUCT_REF(FVector,Z_Param_Out_ProjectileTargetLocation);
+		P_GET_STRUCT_REF(FGameplayTag,Z_Param_Out_SocketTag);
+		P_GET_UBOOL(Z_Param_bOverridePitch);
+		P_GET_PROPERTY(FFloatProperty,Z_Param_PitchOverride);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->SpawnProjectile(Z_Param_Out_ProjectileTargetLocation);
+		P_THIS->SpawnProjectile(Z_Param_Out_ProjectileTargetLocation,Z_Param_Out_SocketTag,Z_Param_bOverridePitch,Z_Param_PitchOverride);
 		P_NATIVE_END;
 	}
 	void UGameProjectileSpell::StaticRegisterNativesUGameProjectileSpell()
@@ -38,11 +43,21 @@ void EmptyLinkFunctionForGeneratedCodeGameProjectileSpell() {}
 		struct GameProjectileSpell_eventSpawnProjectile_Parms
 		{
 			FVector ProjectileTargetLocation;
+			FGameplayTag SocketTag;
+			bool bOverridePitch;
+			float PitchOverride;
 		};
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileTargetLocation_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_ProjectileTargetLocation;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SocketTag_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_SocketTag;
+		static void NewProp_bOverridePitch_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bOverridePitch;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_PitchOverride;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -55,12 +70,29 @@ void EmptyLinkFunctionForGeneratedCodeGameProjectileSpell() {}
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_ProjectileTargetLocation = { "ProjectileTargetLocation", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameProjectileSpell_eventSpawnProjectile_Parms, ProjectileTargetLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_ProjectileTargetLocation_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_ProjectileTargetLocation_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_SocketTag_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_SocketTag = { "SocketTag", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameProjectileSpell_eventSpawnProjectile_Parms, SocketTag), Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_SocketTag_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_SocketTag_MetaData)) }; // 1225434376
+	void Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_bOverridePitch_SetBit(void* Obj)
+	{
+		((GameProjectileSpell_eventSpawnProjectile_Parms*)Obj)->bOverridePitch = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_bOverridePitch = { "bOverridePitch", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(GameProjectileSpell_eventSpawnProjectile_Parms), &Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_bOverridePitch_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_PitchOverride = { "PitchOverride", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(GameProjectileSpell_eventSpawnProjectile_Parms, PitchOverride), METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_ProjectileTargetLocation,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_SocketTag,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_bOverridePitch,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::NewProp_PitchOverride,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Projectile" },
+		{ "CPP_Default_bOverridePitch", "false" },
+		{ "CPP_Default_PitchOverride", "0.000000" },
 		{ "ModuleRelativePath", "Public/AbilitySystem/Abilities/GameProjectileSpell.h" },
 	};
 #endif
@@ -99,7 +131,7 @@ void EmptyLinkFunctionForGeneratedCodeGameProjectileSpell() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Aura,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UGameProjectileSpell_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile, "SpawnProjectile" }, // 4195092105
+		{ &Z_Construct_UFunction_UGameProjectileSpell_SpawnProjectile, "SpawnProjectile" }, // 163911797
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameProjectileSpell_Statics::Class_MetaDataParams[] = {
@@ -155,9 +187,9 @@ void EmptyLinkFunctionForGeneratedCodeGameProjectileSpell() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_Abilities_GameProjectileSpell_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UGameProjectileSpell, UGameProjectileSpell::StaticClass, TEXT("UGameProjectileSpell"), &Z_Registration_Info_UClass_UGameProjectileSpell, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameProjectileSpell), 3185627911U) },
+		{ Z_Construct_UClass_UGameProjectileSpell, UGameProjectileSpell::StaticClass, TEXT("UGameProjectileSpell"), &Z_Registration_Info_UClass_UGameProjectileSpell, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameProjectileSpell), 690211946U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_Abilities_GameProjectileSpell_h_1931252789(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_Abilities_GameProjectileSpell_h_220839152(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_Abilities_GameProjectileSpell_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_Abilities_GameProjectileSpell_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

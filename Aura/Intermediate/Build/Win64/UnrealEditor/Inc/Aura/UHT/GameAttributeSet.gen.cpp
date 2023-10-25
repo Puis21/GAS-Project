@@ -1248,6 +1248,10 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_IncomingDamage_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_IncomingDamage;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_IncomingXP_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_IncomingXP;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -1441,6 +1445,13 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_IncomingDamage = { "IncomingDamage", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, IncomingDamage), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_IncomingDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_IncomingDamage_MetaData)) }; // 1256614452
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_IncomingXP_MetaData[] = {
+		{ "Category", "Meta Attributes" },
+		{ "ModuleRelativePath", "Public/AbilitySystem/GameAttributeSet.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_IncomingXP = { "IncomingXP", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UGameAttributeSet, IncomingXP), Z_Construct_UScriptStruct_FGameplayAttributeData, METADATA_PARAMS(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_IncomingXP_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_IncomingXP_MetaData)) }; // 1256614452
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UGameAttributeSet_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Armor,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_ArmorPenetration,
@@ -1463,6 +1474,7 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_Mana,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_MaxMana,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_IncomingDamage,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGameAttributeSet_Statics::NewProp_IncomingXP,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UGameAttributeSet_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UGameAttributeSet>::IsAbstract,
@@ -1553,9 +1565,9 @@ template<> AURA_API UScriptStruct* StaticStruct<FEffectProperties>()
 		{ FEffectProperties::StaticStruct, Z_Construct_UScriptStruct_FEffectProperties_Statics::NewStructOps, TEXT("EffectProperties"), &Z_Registration_Info_UScriptStruct_EffectProperties, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FEffectProperties), 585162877U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UGameAttributeSet, UGameAttributeSet::StaticClass, TEXT("UGameAttributeSet"), &Z_Registration_Info_UClass_UGameAttributeSet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameAttributeSet), 603443882U) },
+		{ Z_Construct_UClass_UGameAttributeSet, UGameAttributeSet::StaticClass, TEXT("UGameAttributeSet"), &Z_Registration_Info_UClass_UGameAttributeSet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameAttributeSet), 994976901U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_2772510872(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_710531761(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_GenTl_OneDrive_Documents_GitHub_Aura_GAS_Project_Aura_Source_Aura_Public_AbilitySystem_GameAttributeSet_h_Statics::ScriptStructInfo),
 		nullptr, 0);
